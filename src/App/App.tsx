@@ -48,26 +48,31 @@ function App() {
   return (
     <div className={s.App}>
       <div className={s.Info}>
-      <div className={s.Left}>
-        {/* Температура Основная */}
-        {count.main ? (
-          <h4 className={s.temp}>{Math.floor(count.main.temp)}°C</h4>
-        ) : null}
+        <div className={s.Left}>
+          {/* Температура Основная */}
+          {count.main ? (
+            <h4 className={s.temp}>{Math.floor(count.main.temp)}°C</h4>
+          ) : null}
 
-        {/* Температура Ощущается */}
-        {count.main ? (
-          <p className={s.feels}>{Math.floor(count.main.feels_like)}°C</p>
-        ) : null}
-      </div>
+          {/* Температура Ощущается */}
+          {count.main ? (
+            <p className={s.feels}>{Math.floor(count.main.feels_like)}°C</p>
+          ) : null}
+        </div>
 
-      <div className={s.Right}>
-        <h2 className={s.name}>{count.name}</h2>
-        <p className={s.weekday}>{weekDay}</p>
-        <p className={s.date}> - {new Date().getDay()} {month}</p>
-        {count.weather ? (
-        <p className={s.weather}>{count.weather[0].main} - {count.weather[0].description}</p>
-      ) : null}
-      </div>
+        <div className={s.Right}>
+          <h2 className={s.name}>{count.name}</h2>
+          <p className={s.weekday}>{weekDay}</p>
+          <p className={s.date}>
+            {" "}
+            - {new Date().getDate()} {month}
+          </p>
+          {count.weather ? (
+            <p className={s.weather}>
+              {count.weather[0].main} - {count.weather[0].description}
+            </p>
+          ) : null}
+        </div>
       </div>
 
       {/* 
